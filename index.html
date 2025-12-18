@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>王律师</title>
+    <meta name="description" content="王律师(WangLvShi.Com)提供深度法律问题分析、案件胜诉率评估及法律风险预警。我们为您精准对接国内顶尖执业律师团队，提供民商事、刑事等领域的全方位法律服务协作。">
+    <meta name="keywords" content="王律师,王律师官网,法律咨询,律师对接,法律顾问,苏州法律咨询,法律文书起草,民事纠纷,商事合同,法律服务平台">
+    <link rel="canonical" href="https://wanglvshi.com" />
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="王律师 - 化繁为简，为您梳理法律脉络">
+    <meta property="og:description" content="专业法律咨询与执业律师深度协作，提供一站式法律解决方案。">
+    <meta property="og:url" content="https://wanglvshi.com">
+    <meta property="og:site_name" content="王律师">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --primary-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            --accent: #c0a080;
+            --bg-light: #f8fafc;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --success: #38a169;
+            --error: #e53e3e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background-color: var(--white);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- 顶部声明 --- */
+        .top-notice {
+            background: #fff5f5;
+            color: #c53030;
+            padding: 10px 15px;
+            font-size: 13px;
+            text-align: center;
+            border-bottom: 1px solid #feb2b2;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* --- 头部导航 --- */
+        header {
+            padding: 20px 0;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand { display: flex; align-items: center; text-decoration: none; }
+        .brand-logo {
+            width: 45px; height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            display: grid; place-items: center;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .brand-name h1 { font-size: 20px; color: var(--primary); letter-spacing: 1px; line-height: 1.2; }
+        .brand-name p { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+
+        .header-contact { text-align: right; }
+        .phone-link { 
+            font-size: 22px; 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 700;
+            display: block;
+        }
+
+        /* --- Hero 区域 --- */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+        .hero h2 { font-size: 36px; color: var(--primary); margin-bottom: 20px; line-height: 1.3; padding: 0 10px; }
+        .hero p { font-size: 17px; color: var(--text-muted); max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- 优势横条 --- */
+        .advantage-bar {
+            background: white; padding: 20px 0; border-bottom: 1px solid #edf2f7;
+        }
+        .advantage-flex {
+            display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px;
+        }
+        .advantage-item { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+        .advantage-item i { color: var(--accent); margin-right: 6px; }
+
+        /* --- 核心服务体系 --- */
+        .section-padding { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; padding: 0 20px; }
+        .section-title h3 { font-size: 28px; color: var(--primary); margin-bottom: 16px; position: relative; display: inline-block; }
+        .section-title h3::after { content: ''; width: 40px; height: 3px; background: var(--accent); position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); }
+
+        .service-container {
+            display: flex; background: #fff; border-radius: 24px; box-shadow: var(--shadow-md); overflow: hidden; border: 1px solid #edf2f7;
+        }
+        .service-column { flex: 1; padding: 50px; transition: var(--transition); }
+        .service-column.left { background: #fff; border-right: 1px dashed #e2e8f0; }
+        .service-column.right { background: #fbfbfd; }
+        .service-type-tag { display: inline-block; padding: 4px 12px; background: rgba(26, 54, 93, 0.05); color: var(--primary); border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 15px; }
+        .service-column h4 { font-size: 24px; margin-bottom: 20px; color: var(--primary); display: flex; align-items: center; gap: 12px; }
+        .service-column h4 i { color: var(--accent); }
+        .service-column ul { list-style: none; }
+        .service-column li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px; color: var(--text-main); font-size: 15px; }
+        .service-column li i { margin-top: 5px; color: var(--accent); font-size: 13px; }
+
+        .disclaimer-box { margin-top: 30px; padding: 15px; background: #f1f5f9; border-left: 4px solid var(--accent); border-radius: 4px; font-size: 13px; color: #64748b; line-height: 1.6; }
+
+        /* --- 对接流程 --- */
+        .step-flex { display: flex; justify-content: space-between; margin-top: 30px; gap: 20px; }
+        .step-item { flex: 1; text-align: center; position: relative; padding: 0 10px; }
+        .step-icon { width: 70px; height: 70px; background: var(--white); border: 2px solid var(--primary); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 15px; font-size: 24px; color: var(--primary); font-weight: bold; }
+        .step-item h5 { margin-bottom: 8px; font-size: 17px; }
+        .step-item p { font-size: 14px; color: var(--text-muted); }
+
+        /* --- 咨询区域 --- */
+        .contact-area { 
+            background: var(--primary-gradient); color: var(--white); border-radius: 24px; 
+            overflow: hidden; display: flex; align-items: stretch; box-shadow: var(--shadow-md); 
+        }
+        .contact-info-dark { 
+            padding: 50px; flex: 1; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; text-align: center;
+            background: rgba(255,255,255,0.03); 
+        }
+        .contact-form-wrapper { padding: 50px; flex: 1.5; background: var(--white); color: var(--text-main); }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+        .form-input { 
+            width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; 
+            font-size: 16px; transition: var(--transition); appearance: none; -webkit-appearance: none; 
+        }
+        .form-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26, 54, 147, 0.1); }
+        .btn-submit { width: 100%; padding: 16px; background: var(--primary-gradient); color: var(--white); border: none; border-radius: 8px; font-size: 17px; font-weight: 600; cursor: pointer; transition: var(--transition); }
+        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        /* --- FAQ --- */
+        .faq-item { border-bottom: 1px solid #e2e8f0; }
+        .faq-btn {
+            width: 100%; padding: 22px 5px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: none; border: none;
+            cursor: pointer; font-size: 17px; font-weight: 600; color: var(--primary);
+            text-align: left; transition: var(--transition);
+        }
+        .faq-btn:hover { color: var(--accent); }
+        .faq-content { 
+            max-height: 0; overflow: hidden; 
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            color: var(--text-muted); 
+        }
+        .faq-content p { padding: 0 5px 22px; line-height: 1.8; font-size: 15px; }
+
+        /* --- 页脚 --- */
+        footer { background: #0f172a; color: #94a3b8; padding: 60px 0 30px; font-size: 14px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo h4 { color: var(--white); margin-bottom: 15px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
+
+        /* --- 新增：Toast 提示框样式 --- */
+        #toast-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            width: 90%;
+            max-width: 400px;
+        }
+        .toast {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            animation: slideDown 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            border-left: 5px solid var(--primary);
+        }
+        .toast.success { border-left-color: var(--success); }
+        .toast.error { border-left-color: var(--error); }
+        .toast i { font-size: 20px; }
+        .toast.success i { color: var(--success); }
+        .toast.error i { color: var(--error); }
+        .toast-msg { font-size: 14px; color: var(--text-main); font-weight: 500; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+
+        /* --- 移动端适配 --- */
+        @media (max-width: 968px) {
+            .section-padding { padding: 50px 0; }
+            .hero { padding: 50px 0; }
+            .hero h2 { font-size: 26px; }
+            .hero p { font-size: 15px; }
+            .service-container { flex-direction: column; border-radius: 16px; margin: 0 5px; }
+            .service-column { padding: 35px 20px; }
+            .service-column.left { border-right: none; border-bottom: 1px dashed #e2e8f0; }
+            .step-flex { flex-direction: column; gap: 30px; margin-top: 20px; }
+            .step-icon { width: 60px; height: 60px; font-size: 20px; margin-bottom: 10px; }
+            .contact-area { flex-direction: column; border-radius: 16px; margin: 0 5px; }
+            .contact-info-dark { padding: 40px 20px; }
+            .contact-info-dark h3 { font-size: 28px !important; }
+            .contact-form-wrapper { padding: 35px 20px; }
+            .header-flex { flex-direction: column; gap: 12px; }
+            .header-contact { text-align: center; }
+            .phone-link { font-size: 20px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .faq-btn { font-size: 16px; padding: 18px 5px; }
+            .faq-content p { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toast-container"></div>
+
+    <div class="top-notice">
+        <div class="container">
+            <i class="fas fa-info-circle"></i> <strong>法律声明：</strong>王律师非执业律师，仅限咨询服务。诉讼案件将由合作执业律师独立承办。
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-flex">
+            <a href="/" class="brand">
+                <div class="brand-logo"><i class="fas fa-gavel"></i></div>
+                <div class="brand-name">
+                    <h1>王律师</h1>
+                    <p>WangLvShi.Com</p>
+                </div>
+            </a>
+            <div class="header-contact">
+                <a href="tel:0512-57828333" class="phone-link">0512-57828333</a>
+                <p style="font-size: 12px; color: var(--text-muted);">工作日 09:00 - 18:00 (专家在线)</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>化繁为简，为您梳理法律脉络</h2>
+            <p>我们提供深度的法律问题分析服务，针对复杂诉讼需求，为您精准对接国内顶尖执业律师团队。分工明确，专业保障。</p>
+        </div>
+    </section>
+
+    <div class="advantage-bar">
+        <div class="container advantage-flex">
+            <div class="advantage-item"><i class="fas fa-clock"></i> 快速响应</div>
+            <div class="advantage-item"><i class="fas fa-shield-alt"></i> 严格隐私保护</div>
+            <div class="advantage-item"><i class="fas fa-check-circle"></i> 执业律师深度协作</div>
+        </div>
+    </div>
+
+    <section class="section-padding container">
+        <div class="section-title">
+            <h3>核心服务体系</h3>
+        </div>
+        <div class="service-container">
+            <div class="service-column left">
+                <span class="service-type-tag">CONSULTATION</span>
+                <h4><i class="fas fa-lightbulb"></i> 法律咨询服务</h4>
+                <ul>
+                    <li><i class="fas fa-check"></i> 案件可行性及胜诉率深度分析</li>
+                    <li><i class="fas fa-check"></i> 法律风险预警及合规规避方案</li>
+                    <li><i class="fas fa-check"></i> 民商事纠纷解决路径定制设计</li>
+                    <li><i class="fas fa-check"></i> 专业法律文书起草与初步审核</li>
+                </ul>
+                <div class="disclaimer-box">
+                    <strong>服务主体：</strong>由王律师专业顾问团队提供。旨在帮助客户理清法律关系，通过专业诊断降低决策风险，不涉及直接出庭业务。
+                </div>
+            </div>
+            <div class="service-column right">
+                <span class="service-type-tag">LITIGATION</span>
+                <h4><i class="fas fa-user-tie"></i> 执业律师对接</h4>
+                <ul>
+                    <li><i class="fas fa-check"></i> 精准匹配该领域资深执业律师</li>
+                    <li><i class="fas fa-check"></i> 全程协助案件背景交底与材料整理</li>
+                    <li><i class="fas fa-check"></i> 提供诉讼/仲裁的全程代理服务</li>
+                    <li><i class="fas fa-check"></i> 重大疑难案件组织专家联合会诊</li>
+                </ul>
+                <div class="disclaimer-box">
+                    <strong>服务主体：</strong>由独立律师事务所执业律师承办。双方依法签署正式《法律服务委托协议》，确保程序合规，保障执业权利。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="section-title"><h3>协作对接流程</h3></div>
+            <div class="step-flex">
+                <div class="step-item"><div class="step-icon">01</div><h5>现状诊断</h5><p>提交基本案情，进行初步法律关系梳理</p></div>
+                <div class="step-item"><div class="step-icon">02</div><h5>方案评估</h5><p>明确是否需要法律诉讼或非诉介入</p></div>
+                <div class="step-item"><div class="step-icon">03</div><h5>精准对接</h5><p>引荐擅长该领域的执业律师进行面谈</p></div>
+                <div class="step-item"><div class="step-icon">04</div><h5>建立委托</h5><p>您与律师所直接签约，进入法定程序</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container" id="contactSection">
+        <div class="contact-area">
+            <div class="contact-info-dark">
+                <h3 style="font-size: 38px; line-height: 1.3;">立即获取<br>专业意见</h3>
+                <p style="margin-top: 25px; opacity: 0.85; font-size: 16px; max-width: 320px;">
+                    无论是商业纠纷还是个人事务，我们的专业团队将在第一时间为您响应。
+                </p>
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px; padding-top: 30px;">
+                    <p><i class="fas fa-envelope" style="color: var(--accent); margin-right: 12px;"></i> lianxi@wangxiansheng.com</p>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="legalForm">
+                    <div class="input-group"><label>您的姓名</label><input type="text" name="username" class="form-input" placeholder="如何称呼您" required></div>
+                    <div class="input-group"><label>联系电话</label><input type="tel" name="phone" class="form-input" placeholder="以便我们回电" required></div>
+                    <div class="input-group"><label>咨询领域</label>
+                        <select name="subject" class="form-input">
+                            <option value="民事纠纷">民事纠纷</option>
+                            <option value="商事合同">商事合同</option>
+                            <option value="刑事案件">刑事案件</option>
+                            <option value="其他法律事务">其他法律事务</option>
+                        </select>
+                    </div>
+                    <div class="input-group"><label>问题简述</label><textarea name="message" class="form-input" rows="4" placeholder="请简要描述您遇到的法律问题..."></textarea></div>
+                    <label style="font-size: 13px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 8px; margin-bottom: 20px; cursor: pointer;">
+                        <input type="checkbox" required style="margin-top: 4px;">
+                        <span>我已了解并同意：本平台提供的初步服务为法律咨询，具体的案件代理需对接合作执业律师。</span>
+                    </label>
+                    <button type="submit" class="btn-submit" id="submitBtn">提交咨询申请</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="section-title">
+            <h3>常见疑问解答</h3>
+            <p style="color: var(--text-muted);">为您快速解决合作中的专业疑虑</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <button class="faq-btn">王律师可以代表我出庭吗？ <i class="fas fa-plus"></i></button>
+                <div class="faq-content">
+                    <p>王律师提供的是专业的法律咨询和案件分析服务。如涉及出庭辩护等执业律师专属业务，我们会为您对接具有执业资格的合作律师协助办理。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">对接合作律师需要额外付费吗？ <i class="fas fa-plus"></i></button>
+                <div class="faq-content">
+                    <p>我们提供的律师对接服务本身不收取“中介费”。律师服务费将由您根据案件情况，直接与合作的律师事务所协商并签署合同支付。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">我的个人隐私如何保障？ <i class="fas fa-plus"></i></button>
+                <div class="faq-content">
+                    <p>我们严格遵守法律服务行业的保密准则。您的所有咨询内容、案件背景及身份信息仅用于法律分析，绝不向任何无关第三方泄露。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo"><h4>王律师法律咨询协作平台</h4><p>专注法律服务的透明化与高效化，让法治服务触手可及。</p></div>
+                <div><h4 style="color: white; margin-bottom: 20px;">服务领域</h4><p>民事纠纷 / 商事风险 / 刑事法律</p></div>
+                <div><h4 style="color: white; margin-bottom: 20px;">联系我们</h4><p>电话：0512-57828333</p></div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> 王律师 版权所有</p>
+                <p style="font-size: 11px; margin-top: 10px; opacity: 0.5;">特别声明：本平台不直接从事受法律法规限制的律师执业活动。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 自动设置版权年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // FAQ 折叠交互
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.className = 'fas fa-plus';
+                } else {
+                    document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = null);
+                    document.querySelectorAll('.faq-btn i').forEach(i => i.className = 'fas fa-plus');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.className = 'fas fa-minus';
+                }
+            });
+        });
+
+        // 新增：美观的消息提示函数
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            
+            toast.innerHTML = `
+                <i class="fas ${icon}"></i>
+                <span class="toast-msg">${message}</span>
+            `;
+            
+            container.appendChild(toast);
+
+            // 3秒后淡出移除
+            setTimeout(() => {
+                toast.style.animation = 'fadeOut 0.5s forwards';
+                setTimeout(() => toast.remove(), 500);
+            }, 3500);
+        }
+
+        // 表单提交逻辑
+        document.getElementById('legalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const formData = new FormData(form);
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = '提交中...';
+
+            fetch('https://lianxi.wangxiansheng.com/lvshi.php', {
+                method: 'POST',
+                body: formData,
+                mode: 'cors'
+            })
+            .then(response => {
+                if (response.ok) return response.json(); 
+                throw new Error('网络请求异常');
+            })
+            .then(data => {
+                showToast('✅ 咨询申请已成功提交！我们将尽快与您联系。', 'success');
+                form.reset();
+            })
+            .catch(error => {
+                showToast('❌ 提交失败，请拨打电话：0512-57828333', 'error');
+                console.error('Submit Error:', error);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = '提交咨询申请';
+            });
+        });
+    </script>
+</body>
+</html>
